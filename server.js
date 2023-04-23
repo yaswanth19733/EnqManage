@@ -20,7 +20,6 @@ app.get('/leads', async (req, res) => {
   res.json(rows);
 });
 
-// GET a lead by ID
 app.get('/leads/:id', async (req, res) => {
   const [rows] = await pool.query('SELECT * FROM leads WHERE id = ?', [req.params.id]);
   if (rows.length === 0) {
